@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narendra Ajmera</title>
+<meta name="description" content="Narendra Ajmera — Chief Engineer, 30+ years in public engineering administration. Expertise in public procurement law, urban sanitation policy and administrative accountability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EA;
+    --paper-deep:#EFEADB;
+    --ink:#1B2A4A;
+    --ink-soft:#3B4A68;
+    --charcoal:#2B2B28;
+    --slate:#5C6B73;
+    --seal:#9C3B2E;
+    --brass:#A9853F;
+    --rule: rgba(27,42,74,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(27,42,74,0.03), transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(156,59,46,0.03), transparent 45%);
+  }
+  a{color:inherit;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- Masthead ---------- */
+  header.masthead{
+    padding:72px 0 40px;
+    text-align:center;
+    border-bottom:1px solid var(--rule);
+  }
+  .seal{
+    width:88px; height:88px;
+    margin:0 auto 28px;
+    border-radius:50%;
+    border:1.5px solid var(--seal);
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-4deg);
+    animation:settle 900ms ease-out both;
+  }
+  .seal::before{
+    content:"";
+    position:absolute; inset:6px;
+    border:1px solid var(--seal);
+    border-radius:50%;
+    opacity:0.55;
+  }
+  .seal span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:20px;
+    letter-spacing:1px;
+    color:var(--seal);
+  }
+  @keyframes settle{
+    from{opacity:0; transform:rotate(-14deg) scale(0.9);}
+    to{opacity:1; transform:rotate(-4deg) scale(1);}
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 14px;
+  }
+  h1.name{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:clamp(38px, 6vw, 58px);
+    margin:0 0 10px;
+    color:var(--ink);
+    letter-spacing:0.3px;
+  }
+  .title-line{
+    font-family:'Spectral', serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--ink-soft);
+    margin:0 0 6px;
+  }
+  .sub-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--slate);
+    letter-spacing:0.5px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0; border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex; align-items:baseline; gap:16px;
+    margin-bottom:26px;
+  }
+  .section-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--brass);
+    letter-spacing:1px;
+  }
+  h2{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:26px;
+    color:var(--ink);
+    margin:0;
+  }
+  p.lede{
+    font-size:16.5px;
+    line-height:1.75;
+    color:var(--charcoal);
+    max-width:64ch;
+  }
+  p.lede + p.lede{margin-top:16px;}
+
+  /* schedule / practice areas as a formal ledger */
+  .schedule{
+    border-top:1px solid var(--rule);
+    margin-top:8px;
+  }
+  .entry{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:start;
+  }
+  .entry .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--seal);
+    letter-spacing:0.5px;
+    padding-top:3px;
+  }
+  .entry h3{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:18.5px;
+    margin:0 0 6px;
+    color:var(--ink);
+  }
+  .entry p{
+    margin:0;
+    font-size:15px;
+    line-height:1.65;
+    color:var(--slate);
+    max-width:56ch;
+  }
+
+  /* credentials strip */
+  .creds{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    margin:4px 0 0;
+  }
+  .cred{
+    padding:22px 20px;
+    text-align:center;
+    border-left:1px solid var(--rule);
+  }
+  .cred:first-child{border-left:none;}
+  .cred .num{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:30px;
+    color:var(--ink);
+  }
+  .cred .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin-top:6px;
+  }
+
+  /* correspondence / contact */
+  .letter-box{
+    border:1px solid var(--rule);
+    background:var(--paper-deep);
+    padding:34px 32px;
+    position:relative;
+  }
+  .letter-box::before{
+    content:"";
+    position:absolute; top:14px; left:14px; right:14px; bottom:14px;
+    border:1px solid rgba(27,42,74,0.10);
+    pointer-events:none;
+  }
+  .letter-box p{
+    font-family:'Spectral', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--ink-soft);
+    margin:0 0 22px;
+    max-width:52ch;
+  }
+  .contact-lines{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    line-height:2.1;
+    color:var(--charcoal);
+  }
+  .contact-lines .k{color:var(--slate); display:inline-block; width:88px;}
+
+  footer{
+    padding:30px 0 60px;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.5px;
+    color:var(--slate);
+  }
+
+  @media (max-width:560px){
+    .entry{grid-template-columns:1fr;}
+    .entry .tag{padding-top:0;}
+    .creds{grid-template-columns:1fr; }
+    .cred{border-left:none; border-top:1px solid var(--rule);}
+    .cred:first-child{border-top:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .seal{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="seal"><span>NA</span></div>
+  <p class="eyebrow">Chief Engineer &middot; Grade L&#8209;24</p>
+  <h1 class="name">Narendra Ajmera</h1>
+  <p class="title-line">Public engineering administration &amp; procurement policy</p>
+  <p class="sub-line">Ajmer &amp; Jaipur, Rajasthan</p>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <p class="lede">Narendra Ajmera has spent over three decades in public engineering service in Rajasthan, working across infrastructure planning, municipal works, and civic project delivery. His career has centred on the practical machinery of government &mdash; how public works are tendered, executed, and held accountable.</p>
+    <p class="lede">In recent years his attention has turned toward the policy and legal architecture that governs public procurement: the rules, service codes, and accountability mechanisms that determine whether public money is well spent. He engages closely with the Rajasthan Transparency in Public Procurement Act, service conduct rules, and the Right to Information Act as instruments of everyday administrative accountability.</p>
+
+    <div class="creds">
+      <div class="cred"><div class="num">30+</div><div class="label">Years in service</div></div>
+      <div class="cred"><div class="num">L&#8209;24</div><div class="label">Service grade</div></div>
+      <div class="cred"><div class="num">RJ</div><div class="label">Rajasthan, India</div></div>
+    </div>
+  </section>
+
+  <section id="focus">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Areas of focus</h2>
+    </div>
+    <div class="schedule">
+      <div class="entry">
+        <span class="tag">RTPP</span>
+        <div>
+          <h3>Public procurement &amp; tendering</h3>
+          <p>Scrutiny of tender processes under the Rajasthan Transparency in Public Procurement Act, 2012 &mdash; from bid evaluation to contract award.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="tag">FSTP</span>
+        <div>
+          <h3>Urban sanitation policy</h3>
+          <p>Faecal sludge and septage management (FSSM/FSTP) procurement and implementation within local bodies.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="tag">CCA</span>
+        <div>
+          <h3>Service &amp; administrative rules</h3>
+          <p>Rajasthan Civil Services (Classification, Control &amp; Appeal) Rules and the Rajasthan Service Rules, as they shape administrative conduct and process.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="tag">RTI</span>
+        <div>
+          <h3>Transparency &amp; accountability</h3>
+          <p>Use of the Right to Information Act, 2005 as a tool for public oversight of government works and expenditure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Correspondence</h2>
+    </div>
+    <div class="letter-box">
+      <p>For correspondence relating to public engineering, procurement matters, or professional enquiries.</p>
+      <div class="contact-lines">
+        <div><span class="k">Email</span> your-email@example.com</div>
+        <div><span class="k">Phone</span> +91 XXXXX XXXXX</div>
+        <div><span class="k">Location</span> Ajmer / Jaipur, Rajasthan</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Narendra Ajmera
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
